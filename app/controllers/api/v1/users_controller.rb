@@ -6,7 +6,7 @@ class Api::V1::UsersController < Api::ApiV1Controller
 	end
 
 	def index
-		@users = User.where(room: Room.find_by_token(params[:token]))
+		@users = User.where(room_id: Room.find_by_token(params[:token]).id)
 		render @users
 	end
 
