@@ -11,6 +11,11 @@ class Api::V1::RoomsController < Api::ApiV1Controller
 		render json: @room
 	end
 
+	def get
+		@room = Room.find_by(token: params[:token])
+		render json: @room
+	end
+
 	private
 
 	def room_params
