@@ -14,6 +14,6 @@ class Api::V1::RoomsController < Api::ApiV1Controller
 	private
 
 	def room_params
-		params.permit(:name, :status)
+		params.require(:room).permit(:name, :caster_id, :status)
 	end
 end
