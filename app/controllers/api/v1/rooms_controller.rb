@@ -2,7 +2,9 @@ class Api::V1::RoomsController < Api::ApiV1Controller
 
 	def create
 		Room.where(caster_id: room_params[:caster_id]).destroy_all
-		@room = Room.create(room_params)
+		@room = Room.new(room_params)
+		@room.status = params[:status]
+		@room.save
 		render json: @room
 	end
 
@@ -20,6 +22,6 @@ class Api::V1::RoomsController < Api::ApiV1Controller
 	private
 
 	def room_params
-		params.require(:room).permit(:name, :caster_id, :status)
+		params.permit(:name, :caster_id)
 	end
 end
