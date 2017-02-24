@@ -7,6 +7,6 @@ class Room < ActiveRecord::Base
 	end
 
 	def track_changed? uri
-		self.status["track"]["track_resource"]["uri"] == uri
+		self.status["track"]["track_resource"]["uri"] != uri
 	end
 end
