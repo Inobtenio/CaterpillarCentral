@@ -10,7 +10,7 @@ class Api::V1::RoomsController < Api::ApiV1Controller
 
 	def edit
 		@room = Room.find_by(caster_id: params[:caster_id], playing: params[:playing])
-		@room.update(changed: @room.track_changed?(params[:status][:track][:track_resource][:uri]))
+		@room.update(track_changed: @room.track_changed?(params[:status][:track][:track_resource][:uri]))
 		@room.update(status: params[:status])
 		render json: @room
 	end
