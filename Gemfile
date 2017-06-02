@@ -30,7 +30,7 @@ gem 'awesome_print', '1.6.1'
 # Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
-gem 'gema', path: "~/Desktop/MyProjects/gema"
+gem 'gema', git: 'https://github.com/Inobtenio/gem.git'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
